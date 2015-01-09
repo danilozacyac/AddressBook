@@ -1,0 +1,130 @@
+﻿<Window x:Class="AddressBook.AddContacto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Añadir contacto"
+        Width="900"
+        Height="800"
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Label Margin="10,48,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Nombre" />
+            <TextBox x:Name="TxtNombre"
+                     Width="277"
+                     Height="23"
+                     Margin="10,79,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     TextWrapping="Wrap" />
+            <Label Margin="10,124,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="A. Paterno" />
+            <TextBox x:Name="TxtPaterno"
+                     Width="277"
+                     Height="23"
+                     Margin="10,155,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     TextWrapping="Wrap" />
+            <Label Margin="10,204,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="A. Materno" />
+            <TextBox x:Name="TxtMaterno"
+                     Width="277"
+                     Height="23"
+                     Margin="10,235,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     TextWrapping="Wrap" />
+            <Label Margin="10,282,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Título" />
+            <ComboBox x:Name="CbxTitulo"
+                      Width="277"
+                      Margin="10,313,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top" />
+            <DatePicker Width="168"
+                        Margin="10,396,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" />
+            <Label Margin="12,365,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Fecha de Nacimiento" />
+            <Button x:Name="BtnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="187,715,0,0" VerticalAlignment="Top" Width="75" Click="BtnGuardar_Click"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".4*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <ScrollViewer Grid.Row="0" Margin="0,70,0,0">
+                <StackPanel Name="Telefonos" Orientation="Vertical" />
+            </ScrollViewer>
+            <Image x:Name="BtnAddMetodo" Width="24"
+                   Height="22"
+                   Margin="0,40,230,0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Cursor="Hand"
+                   Source="Resources/addsign.png" MouseLeftButtonDown="BtnAddMetodo_MouseLeftButtonDown" />
+            <Label Margin="0,39,17,0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Content="Agregar Teléfono / Correo electrónico" MouseLeftButtonDown="BtnAddMetodo_MouseLeftButtonDown"
+                   Cursor="Hand" />
+            <Label Margin="10,10,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Medios de Contacto"
+                   FontSize="18"
+                   FontWeight="Bold" />
+            <Label Grid.Row="1"
+                   Margin="10,10,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Direcciones"
+                   FontSize="18"
+                   FontWeight="Bold" />
+            <Image x:Name="BtnAddDireccion"
+                   Grid.Row="1"
+                   Width="24"
+                   Height="22"
+                   Margin="0,43,122,0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Cursor="Hand"
+                   MouseLeftButtonDown="BtnAddDireccion_MouseLeftButtonDown"
+                   Source="Resources/addsign.png" />
+            <Label Grid.Row="1"
+                   Margin="0,38,17,0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Content="Agregar Dirección"
+                   Cursor="Hand"
+                   MouseLeftButtonDown="BtnAddDireccion_MouseLeftButtonDown" />
+            <ScrollViewer Grid.Row="1" Margin="0,70,0,0">
+                <StackPanel x:Name="Direcciones" Orientation="Vertical" />
+            </ScrollViewer>
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>

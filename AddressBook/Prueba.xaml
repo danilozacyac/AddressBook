@@ -1,0 +1,38 @@
+﻿<Window x:Class="AddressBook.Prueba"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AddressBook"
+        Title="Prueba"
+        Width="300"
+        Height="300">
+    <Window.Resources>
+        <Image Source="Resources/mail.png" x:Key="imgOn"/>
+        <Image Source="Resources/phone.png" x:Key="imgOff"/>
+        <Style TargetType="RadioButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Grid>
+                            <Image Source="Resources/phone.png" Width="32" Height="32"/>
+                            <ContentPresenter/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content" Value="{DynamicResource imgOn}"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Content" Value="{DynamicResource imgOff}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <RadioButton Name="rb1" Width="32" Height="32" Margin="5"/>
+        <!--<RadioButton Name="rb2" Width="32" Height="32" Margin="5"/>
+        <RadioButton Name="rb3" Width="32" Height="32" Margin="5"/>
+        <RadioButton Name="rb4" Width="32" Height="32" Margin="5"/>-->
+    </StackPanel>
+</Window>
